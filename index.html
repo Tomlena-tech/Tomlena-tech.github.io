@@ -353,11 +353,25 @@
       .about-grid { grid-template-columns:1fr; gap:3rem; }
       footer { flex-direction:column; gap:1rem; text-align:center; padding:2rem 1.5rem; }
     }
+    @keyframes gallop {
+  0% { left: 0; }
+  100% { left: calc(100% - 60px); }
+}
+
+.unicorn {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 45px;
+  animation: gallop 4s linear infinite;
+  pointer-events: none;
+}
   </style>
 </head>
 <body>
 
 <nav>
+  <img src="vgyk13-unicorn-16249_512.gif" class="unicorn" />
   <a href="#hero" class="nav-logo">WIMC</a>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
