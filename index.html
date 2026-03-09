@@ -12,7 +12,6 @@
       --card: #0f2040;
       --border: rgba(255,255,255,0.07);
       --blue: #4a9eff;
-      --blue-dim: rgba(74,158,255,0.12);
       --text: #e2eaf4;
       --muted: #4d6a8a;
       --white: #ffffff;
@@ -35,7 +34,7 @@
       z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.2rem 3.5rem;
-      background: rgba(7,17,30,0.8);
+      background: rgba(7,17,30,0.85);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
@@ -49,10 +48,7 @@
       letter-spacing: -0.02em;
     }
 
-    .nav-links {
-      display: flex; gap: 2.5rem; list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       color: var(--muted);
       text-decoration: none;
@@ -92,8 +88,8 @@
     .hero-bg {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 70% 50% at 70% 50%, rgba(74,158,255,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(74,158,255,0.04) 0%, transparent 50%);
+        radial-gradient(ellipse 70% 50% at 70% 50%, rgba(74,158,255,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(74,158,255,0.03) 0%, transparent 50%);
     }
 
     .hero-left { position: relative; z-index: 2; }
@@ -108,7 +104,6 @@
       opacity: 0;
       animation: up 0.7s ease 0.1s forwards;
     }
-
     .label-line { width: 20px; height: 1px; background: var(--blue); }
 
     h1 {
@@ -121,11 +116,7 @@
       opacity: 0;
       animation: up 0.7s ease 0.2s forwards;
     }
-
-    h1 em {
-      font-style: normal;
-      color: var(--blue);
-    }
+    h1 em { font-style: normal; color: var(--blue); }
 
     .hero-sub {
       font-size: 1rem;
@@ -136,7 +127,6 @@
       opacity: 0;
       animation: up 0.7s ease 0.3s forwards;
     }
-
     .hero-sub strong { color: var(--text); font-weight: 400; }
 
     .hero-actions {
@@ -174,7 +164,6 @@
     }
     .btn-secondary:hover { border-color: rgba(255,255,255,0.2); }
 
-    /* Metrics */
     .hero-stats {
       display: flex; gap: 2.5rem;
       margin-top: 3rem;
@@ -183,7 +172,6 @@
       opacity: 0;
       animation: up 0.7s ease 0.55s forwards;
     }
-
     .stat-val {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
@@ -194,7 +182,7 @@
     .stat-val span { color: var(--blue); }
     .stat-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 0.2rem; }
 
-    /* Phone */
+    /* Phone hero */
     .hero-right {
       position: relative; z-index: 2;
       display: flex; justify-content: center;
@@ -203,10 +191,9 @@
     }
 
     .phone {
-      width: 260px; height: 540px;
+      width: 260px;
       border-radius: 40px;
       border: 1px solid rgba(74,158,255,0.2);
-      background: var(--surface);
       overflow: hidden;
       box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 60px rgba(74,158,255,0.05);
       animation: float 5s ease-in-out infinite;
@@ -217,62 +204,10 @@
       50% { transform: translateY(-12px); }
     }
 
-    .phone-map {
-      flex: 1;
-      height: 420px;
-      background: #081828;
-      position: relative;
-      overflow: hidden;
+    .phone img {
+      width: 100%;
+      display: block;
     }
-
-    .phone-map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-
-    .ping {
-      position: absolute;
-      top: 44%; left: 52%;
-      transform: translate(-50%,-50%);
-    }
-
-    .ping-ring {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid var(--blue);
-      top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
-      animation: ping 2.5s ease-out infinite;
-    }
-    .ping-ring:nth-child(2) { animation-delay: 0.9s; }
-    .ping-ring:nth-child(3) { animation-delay: 1.8s; }
-
-    @keyframes ping {
-      0% { width: 12px; height: 12px; opacity: 0.7; }
-      100% { width: 56px; height: 56px; opacity: 0; }
-    }
-
-    .ping-dot {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: var(--blue);
-      border: 2px solid white;
-      position: relative; z-index: 2;
-      box-shadow: 0 0 12px var(--blue);
-    }
-
-    .phone-bar {
-      height: 120px;
-      background: var(--surface);
-      border-top: 1px solid rgba(74,158,255,0.1);
-      padding: 1rem 1.2rem;
-      display: flex; flex-direction: column; gap: 0.5rem;
-    }
-
-    .bar-row { display: flex; align-items: center; justify-content: space-between; }
-    .bar-live { display: flex; align-items: center; gap: 0.5rem; font-size: 0.62rem; color: var(--blue); text-transform: uppercase; letter-spacing: 0.08em; }
-    .bar-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--blue); animation: blink 1.5s ease infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-    .bar-time { font-size: 0.58rem; color: var(--muted); }
-    .bar-loc { font-size: 0.7rem; color: var(--text); font-weight: 500; }
-    .bar-status { display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(74,158,255,0.1); border: 1px solid rgba(74,158,255,0.2); color: var(--blue); font-size: 0.58rem; padding: 0.25rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; align-self: flex-start; }
 
     /* SECTIONS */
     .section {
@@ -280,7 +215,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .section-border { border-top: 1px solid var(--border); }
 
     .section-tag {
@@ -307,78 +241,41 @@
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
+      gap: 1.5rem;
     }
 
     .feat {
-      background: var(--bg);
-      padding: 2.2rem;
-      transition: background 0.25s;
-    }
-    .feat:hover { background: var(--surface); }
-
-    .feat-visual {
-      height: 160px;
       background: var(--surface);
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 14px;
       overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .feat:hover { border-color: rgba(74,158,255,0.2); transform: translateY(-4px); }
+
+    .feat-screen {
+      width: 100%;
+      aspect-ratio: 9/16;
+      overflow: hidden;
+      position: relative;
+      background: #0a1828;
     }
 
-    /* GPS Visual */
-    .v-gps { background: #081828; }
+    .feat-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.4s ease;
+    }
 
-    /* AI Visual */
-    .v-ai { background: #060f18; }
-    .ai-lines { padding: 1rem; font-family: 'Courier New', monospace; font-size: 0.65rem; line-height: 1.9; width: 100%; }
-    .ai-l { color: #2a4a6a; }
-    .ai-l.q { color: var(--blue); }
-    .ai-l.a { color: var(--text); }
-    .ai-cursor { display: inline-block; width: 6px; height: 11px; background: var(--blue); vertical-align: text-bottom; animation: blink 1s step-end infinite; }
+    .feat:hover .feat-screen img { transform: scale(1.03); }
 
-    /* Zones Visual */
-    .v-zones { background: #060d18; }
-    .zone-wrap { position: relative; width: 120px; height: 120px; }
-    .zr { position: absolute; border-radius: 50%; border: 1px dashed; top:50%; left:50%; transform:translate(-50%,-50%); }
-    .zr1 { width:120px;height:120px; border-color:rgba(74,158,255,0.12); }
-    .zr2 { width:78px;height:78px; border-color:rgba(74,158,255,0.22); }
-    .zr3 { width:40px;height:40px; border-color:rgba(74,158,255,0.5); border-style:solid; background:rgba(74,158,255,0.06); }
-    .zd { position:absolute; width:10px;height:10px; border-radius:50%; background:var(--blue); box-shadow:0 0 12px var(--blue); top:50%;left:50%; transform:translate(-50%,-50%); z-index:2; }
-    .z-badge { position:absolute; top:10px; right:10px; background:rgba(255,80,80,0.1); border:1px solid rgba(255,80,80,0.3); color:#ff6060; font-size:0.55rem; padding:0.2rem 0.5rem; border-radius:3px; text-transform:uppercase; letter-spacing:0.05em; }
-
+    .feat-body { padding: 1.4rem 1.6rem; }
     .feat-num { font-size: 0.62rem; letter-spacing: 0.1em; color: var(--blue); text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 500; }
     .feat-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: -0.02em; margin-bottom: 0.6rem; }
     .feat-desc { color: var(--muted); font-size: 0.84rem; line-height: 1.7; }
-
-    /* History bar */
-    .v-history { background: #07101c; align-items: flex-end; padding: 1rem 1.2rem; gap: 5px; display: flex !important; }
-    .hb { flex:1; border-radius:3px 3px 0 0; animation: grow 1s ease both; }
-    @keyframes grow { from{transform:scaleY(0);transform-origin:bottom} to{transform:scaleY(1)} }
-    .hb:nth-child(1){height:35%;background:rgba(74,158,255,0.35);animation-delay:.05s}
-    .hb:nth-child(2){height:60%;background:rgba(74,158,255,0.45);animation-delay:.1s}
-    .hb:nth-child(3){height:40%;background:rgba(74,158,255,0.35);animation-delay:.15s}
-    .hb:nth-child(4){height:80%;background:var(--blue);animation-delay:.2s}
-    .hb:nth-child(5){height:50%;background:rgba(74,158,255,0.45);animation-delay:.25s}
-    .hb:nth-child(6){height:65%;background:rgba(74,158,255,0.4);animation-delay:.3s}
-    .hb:nth-child(7){height:30%;background:rgba(74,158,255,0.3);animation-delay:.35s}
-
-    /* Bottom row features */
-    .features-bottom {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-top: none;
-      border-radius: 0 0 12px 12px;
-      overflow: hidden;
-    }
 
     /* ABOUT */
     .about-grid {
@@ -406,7 +303,6 @@
     .hb-link { color:var(--blue); text-decoration:none; border-bottom:1px solid rgba(74,158,255,0.3); }
     .hb-link:hover { border-color:var(--blue); }
 
-    /* Timeline */
     .timeline { margin-bottom: 2rem; }
     .tl-head { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
     .tl-row { display:flex; gap:1rem; padding:0.75rem 0; border-bottom:1px solid var(--border); }
@@ -414,7 +310,6 @@
     .tl-s { font-size:0.68rem; letter-spacing:0.06em; color:var(--blue); text-transform:uppercase; font-weight:600; }
     .tl-d { font-size:0.78rem; color:var(--muted); margin-top:0.1rem; }
 
-    /* Team */
     .team-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -422,46 +317,22 @@
       padding: 1.5rem;
       margin-bottom: 1rem;
     }
-
     .team-top { display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem; }
     .team-av { width:46px;height:46px; border-radius:50%; background:var(--blue); display:flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-weight:800; font-size:1rem; color:#fff; flex-shrink:0; }
     .team-name { font-family:'Syne',sans-serif; font-weight:700; font-size:0.95rem; }
     .team-role { font-size:0.75rem; color:var(--muted); margin-top:0.15rem; }
     .team-links { display:flex; gap:0.5rem; flex-wrap:wrap; }
-
-    .t-link {
-      display:inline-flex; align-items:center; gap:0.35rem;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size:0.72rem;
-      padding:0.35rem 0.8rem;
-      border-radius:5px;
-      text-decoration:none;
-      transition:color 0.2s, border-color 0.2s;
-    }
+    .t-link { display:inline-flex; align-items:center; gap:0.35rem; background:rgba(255,255,255,0.03); border:1px solid var(--border); color:var(--muted); font-size:0.72rem; padding:0.35rem 0.8rem; border-radius:5px; text-decoration:none; transition:color 0.2s, border-color 0.2s; }
     .t-link:hover { color:var(--text); border-color:rgba(255,255,255,0.15); }
 
-    .repo-link {
-      display:flex; align-items:center; justify-content:space-between;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.1rem 1.4rem;
-      text-decoration: none;
-      transition: border-color 0.2s, transform 0.2s;
-    }
+    .repo-link { display:flex; align-items:center; justify-content:space-between; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:1.1rem 1.4rem; text-decoration:none; transition:border-color 0.2s, transform 0.2s; }
     .repo-link:hover { border-color:rgba(74,158,255,0.25); transform:translateX(3px); }
     .repo-tag { font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:0.2rem; }
     .repo-name { font-family:'Syne',sans-serif; font-weight:700; font-size:0.9rem; color:var(--text); }
     .repo-arr { color:var(--blue); font-size:1.1rem; }
 
     /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 3.5rem;
-      display: flex; align-items: center; justify-content: space-between;
-    }
+    footer { border-top:1px solid var(--border); padding:2rem 3.5rem; display:flex; align-items:center; justify-content:space-between; }
     .foot-logo { font-family:'Syne',sans-serif; font-weight:800; color:var(--white); font-size:1.1rem; }
     .foot-copy { font-size:0.75rem; color:var(--muted); }
 
@@ -479,7 +350,6 @@
       .hero-right { display:none; }
       .section { padding:5rem 1.5rem; }
       .features-grid { grid-template-columns:1fr; }
-      .features-bottom { grid-template-columns:1fr; }
       .about-grid { grid-template-columns:1fr; gap:3rem; }
       footer { flex-direction:column; gap:1rem; text-align:center; padding:2rem 1.5rem; }
     }
@@ -524,156 +394,51 @@
 
   <div class="hero-right">
     <div class="phone">
-      <div class="phone-map">
-        <svg viewBox="0 0 260 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <rect width="260" height="420" fill="#081828"/>
-          <g stroke="rgba(255,255,255,0.04)" stroke-width="0.5">
-            <line x1="0" y1="70" x2="260" y2="70"/>
-            <line x1="0" y1="140" x2="260" y2="140"/>
-            <line x1="0" y1="210" x2="260" y2="210"/>
-            <line x1="0" y1="280" x2="260" y2="280"/>
-            <line x1="0" y1="350" x2="260" y2="350"/>
-            <line x1="65" y1="0" x2="65" y2="420"/>
-            <line x1="130" y1="0" x2="130" y2="420"/>
-            <line x1="195" y1="0" x2="195" y2="420"/>
-          </g>
-          <g stroke="rgba(255,255,255,0.06)" stroke-width="1.5" fill="none">
-            <line x1="0" y1="200" x2="260" y2="200"/>
-            <line x1="143" y1="0" x2="143" y2="420"/>
-            <path d="M0 140 Q65 140 95 175 Q120 205 143 200"/>
-            <path d="M260 265 Q210 265 185 240 Q160 218 143 200"/>
-          </g>
-          <circle cx="143" cy="200" r="52" stroke="rgba(74,158,255,0.18)" stroke-width="1" stroke-dasharray="4 3" fill="rgba(74,158,255,0.03)"/>
-          <path d="M55 330 Q75 295 105 272 Q125 255 138 240 Q141 228 143 215" stroke="rgba(74,158,255,0.35)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <circle cx="55" cy="330" r="2.5" fill="rgba(74,158,255,0.3)"/>
-          <circle cx="105" cy="272" r="2.5" fill="rgba(74,158,255,0.4)"/>
-          <circle cx="138" cy="240" r="2.5" fill="rgba(74,158,255,0.5)"/>
-        </svg>
-        <div class="ping">
-          <div class="ping-ring"></div>
-          <div class="ping-ring"></div>
-          <div class="ping-ring"></div>
-          <div class="ping-dot"></div>
-        </div>
-      </div>
-      <div class="phone-bar">
-        <div class="bar-row">
-          <div class="bar-live"><div class="bar-dot"></div>Live</div>
-          <div class="bar-time">Updated now</div>
-        </div>
-        <div class="bar-loc">Bordeaux, Gironde</div>
-        <div class="bar-status">✓ Zone sécurisée</div>
-      </div>
+      <img src="screen_gps.jpg" alt="WIMC GPS tracking"/>
     </div>
   </div>
 </div>
 
 <!-- FEATURES -->
-<div class="section section-border">
+<div class="section section-border" id="features">
   <div class="section-tag reveal">Features</div>
   <h2 class="section-title reveal d1">Three features.<br/>One peace of mind.</h2>
 
   <div class="features-grid">
+
     <div class="feat reveal d1">
-      <div class="feat-visual v-gps">
-        <svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%" preserveAspectRatio="xMidYMid slice">
-          <rect width="220" height="160" fill="#081828"/>
-          <g stroke="rgba(255,255,255,0.04)" stroke-width="0.5">
-            <line x1="0" y1="40" x2="220" y2="40"/><line x1="0" y1="80" x2="220" y2="80"/>
-            <line x1="0" y1="120" x2="220" y2="120"/><line x1="55" y1="0" x2="55" y2="160"/>
-            <line x1="110" y1="0" x2="110" y2="160"/><line x1="165" y1="0" x2="165" y2="160"/>
-          </g>
-          <path d="M20 140 Q50 115 75 100 Q95 88 110 82" stroke="url(#pg)" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M110 82 Q135 74 160 64 Q185 55 200 46" stroke="url(#pg2)" stroke-width="2" fill="none" stroke-dasharray="4 3" stroke-linecap="round"/>
-          <circle cx="20" cy="140" r="2.5" fill="rgba(74,158,255,0.4)"/>
-          <circle cx="75" cy="100" r="2.5" fill="rgba(74,158,255,0.5)"/>
-          <circle cx="110" cy="82" r="14" fill="rgba(74,158,255,0.08)" stroke="rgba(74,158,255,0.25)" stroke-width="1"/>
-          <circle cx="110" cy="82" r="5" fill="#4a9eff"/>
-          <circle cx="110" cy="82" r="2" fill="white"/>
-          <defs>
-            <linearGradient id="pg" x1="20" y1="140" x2="110" y2="82" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="rgba(74,158,255,0.1)"/><stop offset="100%" stop-color="#4a9eff"/>
-            </linearGradient>
-            <linearGradient id="pg2" x1="110" y1="82" x2="200" y2="46" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="rgba(74,158,255,0.5)"/><stop offset="100%" stop-color="rgba(74,158,255,0.1)"/>
-            </linearGradient>
-          </defs>
-        </svg>
+      <div class="feat-screen">
+        <img src="screen_gps.jpg" alt="Real-time GPS tracking"/>
       </div>
-      <div class="feat-num">01</div>
-      <div class="feat-name">Real-time GPS Tracking</div>
-      <p class="feat-desc">Live position on Google Maps, updated every 10 seconds via background location tracking — even when the phone is locked.</p>
+      <div class="feat-body">
+        <div class="feat-num">01</div>
+        <div class="feat-name">Real-time GPS Tracking</div>
+        <p class="feat-desc">Live position on Google Maps, updated every 10 seconds. Background location tracking works even when the phone is locked.</p>
+      </div>
     </div>
 
     <div class="feat reveal d2">
-      <div class="feat-visual v-ai">
-        <div class="ai-lines">
-          <div class="ai-l">$ wimc --connect</div>
-          <div class="ai-l q">▸ Où est ma fille ?</div>
-          <div class="ai-l" style="color:#2a6090">Processing via MCP...</div>
-          <div class="ai-l a">Ta fille est à</div>
-          <div class="ai-l a" style="color:#4a9eff">Bordeaux Centre</div>
-          <div class="ai-l a">zone sécurisée ✓</div>
-          <div class="ai-l">────────────</div>
-          <div class="ai-l" style="color:#1a3a55">get_last_position</div>
-          <span class="ai-cursor"></span>
-        </div>
+      <div class="feat-screen">
+        <img src="screen_zones.jpg" alt="Safe zones"/>
       </div>
-      <div class="feat-num">02</div>
-      <div class="feat-name">Claude AI via MCP</div>
-      <p class="feat-desc">Ask in plain French — Claude AI connects to WIMC via MCP Protocol and answers instantly with real location data.</p>
+      <div class="feat-body">
+        <div class="feat-num">02</div>
+        <div class="feat-name">Smart Safe Zones</div>
+        <p class="feat-desc">Define custom zones around home or school. Haversine distance calculation triggers instant alerts when your child enters or leaves.</p>
+      </div>
     </div>
 
     <div class="feat reveal d3">
-      <div class="feat-visual v-zones">
-        <div class="zone-wrap">
-          <div class="zr zr1"></div>
-          <div class="zr zr2"></div>
-          <div class="zr zr3"></div>
-          <div class="zd"></div>
-        </div>
-        <div class="z-badge">⚠ Outside zone</div>
+      <div class="feat-screen">
+        <img src="screen_history.jpg" alt="Location history"/>
       </div>
-      <div class="feat-num">03</div>
-      <div class="feat-name">Smart Safe Zones</div>
-      <p class="feat-desc">Define custom zones around home or school. Haversine distance calculation triggers instant alerts when your child enters or leaves.</p>
-    </div>
-  </div>
-
-  <div class="features-bottom">
-    <div class="feat reveal d1">
-      <div class="feat-visual v-history">
-        <div class="hb"></div><div class="hb"></div><div class="hb"></div>
-        <div class="hb"></div><div class="hb"></div><div class="hb"></div><div class="hb"></div>
+      <div class="feat-body">
+        <div class="feat-num">03</div>
+        <div class="feat-name">Location History</div>
+        <p class="feat-desc">Browse day-by-day movement history. Routes drawn as polylines on the map with date banners for easy navigation.</p>
       </div>
-      <div class="feat-num">04</div>
-      <div class="feat-name">Location History</div>
-      <p class="feat-desc">Browse day-by-day movement history. Routes drawn as polylines with date banners on the map.</p>
     </div>
 
-    <div class="feat reveal d2">
-      <div class="feat-visual" style="background:#07101c; flex-direction:column; gap:0.6rem; padding:1.2rem;">
-        <div style="display:flex;align-items:center;gap:0.6rem;background:rgba(74,158,255,0.06);border:1px solid rgba(74,158,255,0.12);border-radius:6px;padding:0.6rem 0.8rem;">
-          <div style="width:5px;height:5px;border-radius:50%;background:#4a9eff"></div>
-          <span style="font-size:0.65rem;color:#4a9eff;font-family:'Courier New',monospace">FastAPI · Fly.io</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:0.6rem;background:rgba(74,158,255,0.04);border:1px solid rgba(74,158,255,0.08);border-radius:6px;padding:0.6rem 0.8rem;">
-          <div style="width:5px;height:5px;border-radius:50%;background:#4a9eff;opacity:0.6"></div>
-          <span style="font-size:0.65rem;color:#2a5a8a;font-family:'Courier New',monospace">PostgreSQL · JWT · bcrypt</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:0.6rem;background:rgba(74,158,255,0.04);border:1px solid rgba(74,158,255,0.08);border-radius:6px;padding:0.6rem 0.8rem;">
-          <div style="width:5px;height:5px;border-radius:50%;background:#4a9eff;opacity:0.4"></div>
-          <span style="font-size:0.65rem;color:#2a5a8a;font-family:'Courier New',monospace">React Native · Expo · EAS</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:0.6rem;background:rgba(74,158,255,0.04);border:1px solid rgba(74,158,255,0.08);border-radius:6px;padding:0.6rem 0.8rem;">
-          <div style="width:5px;height:5px;border-radius:50%;background:#4a9eff;opacity:0.3"></div>
-          <span style="font-size:0.65rem;color:#2a5a8a;font-family:'Courier New',monospace">Claude AI · MCP Protocol</span>
-        </div>
-      </div>
-      <div class="feat-num">Stack</div>
-      <div class="feat-name">Full-Stack Architecture</div>
-      <p class="feat-desc">FastAPI backend deployed on Fly.io, PostgreSQL cloud DB, React Native Android app, iOS GPS emitter, Claude AI integration.</p>
-    </div>
   </div>
 </div>
 
